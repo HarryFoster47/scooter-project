@@ -1,0 +1,34 @@
+classDiagram    
+User <|-- App_system
+User <|-- Scooter
+Scooter --* App_system
+
+   class User {
+    +string username
+    +string password
+    +number age
+    }
+   
+   class Scooter {
+   +string station
+   +string user
+   +string isBroken
+   +string docked
+   +number serial
+   +number charge
+   +rent()
+   +dock(station)
+   +recharge()
+   +requestRepair()
+   
+   }
+
+   class App_system {
+   +string stations
+   +string registeredUsers
+   +register(user)
+   +logIn(username,password)
+   +addScooter()
+   +removeScooter(scooterToRemove)
+
+   }
